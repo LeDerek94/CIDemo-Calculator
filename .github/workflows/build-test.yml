@@ -20,9 +20,12 @@ jobs:
     
     - name: Restore dependencies
       run: dotnet restore
+      working-directory: CIDemo-Calculator/v17
     
     - name: Build
       run: dotnet build --no-restore
+      working-directory: CIDemo-Calculator/v17
     
     - name: Test
       run: dotnet test --no-build --verbosity normal
+      working-directory: CIDemo-Calculator/v17
