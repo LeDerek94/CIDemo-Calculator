@@ -19,10 +19,13 @@ jobs:
         dotnet-version: 9.0.x
     
     - name: Restore dependencies
-      run: dotnet restore CIDemoCalculator/CIDemoCalculator.sln
+      run: dotnet restore
+      working-directory: CIDemoCalculator
     
     - name: Build
-      run: dotnet build CIDemoCalculator/CIDemoCalculator.sln --no-restore
+      run: dotnet build --no-restore
+      working-directory: CIDemoCalculator
     
     - name: Test
-      run: dotnet test CIDemoCalculator/CIDemoCalculator.sln --no-build --verbosity normal
+      run: dotnet test --no-build --verbosity normal
+      working-directory: CIDemoCalculator
